@@ -1,4 +1,5 @@
 #include <FastLED.h>
+
 #if defined(FASTLED_VERSION) && (FASTLED_VERSION < 3001000)
 #warning "Requires FastLED 3.1 or later; check github for latest code."
 #endif
@@ -35,20 +36,20 @@ typedef void (*SimplePatternList[])();
 
 
 SimplePatternList gPatterns = {
-  C_2_C_Rainbow_Sweep,
-  C_2_C_Rainbow_On_Off_Sweep,
-  corner_to_corner_rainbow,
-  all_fade_rainbow,
+  c_2_c_white,
+  c_2_c_rainbow_fade, 
   rainbow_cycle, 
   sparkle_white, 
   worm_fade_white, 
   rainbow_pulse, 
   sparkle_rainbow, 
   worm_fade_rainbow, 
+  c_2_c_rainbow_sweep,
   white_rainbow, 
-  corner_to_corner_rainbow, 
   all_fade, 
-  shooting_stars
+  shooting_stars,
+  c_2_c_rainbow_on_off_sweep,
+  all_fade_rainbow,
   };
 
 int num_modes = (sizeof(gPatterns) / sizeof(gPatterns[0]));
@@ -79,6 +80,7 @@ void nextPattern()
     gCurrentPatternNumber = random(num_modes) % ARRAY_SIZE(gPatterns);
   }
   else {
+    Serial.println(random(num_modes));
     gCurrentPatternNumber = (gCurrentPatternNumber + 1) % ARRAY_SIZE(gPatterns);
   }
   
