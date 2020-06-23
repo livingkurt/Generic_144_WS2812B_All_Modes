@@ -36,6 +36,8 @@ typedef void (*SimplePatternList[])();
 
 
 SimplePatternList gPatterns = {
+  // flash_rainbow,
+  rainbow_cycle, 
   c2c_white,
   c2c_rainbow_fade, 
   rainbow_cycle, 

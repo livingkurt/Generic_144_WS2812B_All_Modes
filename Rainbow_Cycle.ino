@@ -1,8 +1,8 @@
 
 // Pattern 1
-#define RATE_1 10
+#define RATE_1 20
 int start_hue_1;
-int delta_hue_1 = 20;
+int delta_hue_1 = 3;
 
 void rainbow_cycle()
 {
