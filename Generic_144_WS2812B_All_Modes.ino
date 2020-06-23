@@ -13,7 +13,7 @@
 // The Order of RGB was wired on the chip
 #define COLOR_ORDER GRB
 // Interval Between Mode Changes
-#define INTERVAL 10
+#define INTERVAL 100
 // Choose Random or Not Random Mode Changes
 #define RANDOM "Not Random"
 
@@ -21,6 +21,8 @@ CRGB leds[NUM_LEDS];
 
 #define BRIGHTNESS 255
 #define FRAMES_PER_SECOND 120
+
+TBlendType blendingType; //tBlendType is a type of value like int/char/uint8_t etc., use to choose LINERBLEND and NOBLEND
 
 void setup()
 {
@@ -37,6 +39,7 @@ typedef void (*SimplePatternList[])();
 
 SimplePatternList gPatterns = {
   // flash_rainbow,
+  color_palette,
   rainbow_cycle, 
   c2c_white,
   c2c_rainbow_fade, 
