@@ -3,11 +3,17 @@
 #warning "Requires FastLED 3.1 or later; check github for latest code."
 #endif
 
-#define DATA_PIN 5
+// Data Pin on Arduino
+#define LED_PIN 5
+// LED Chip Type
 #define LED_TYPE WS2812B
-#define COLOR_ORDER GRB
+// Number of LEDs Used
 #define NUM_LEDS 144
+// The Order of RGB was wired on the chip
+#define COLOR_ORDER GRB
+// Interval Between Mode Changes
 #define INTERVAL 10
+// Choose Random or Not Random Mode Changes
 #define RANDOM "Not Random"
 
 CRGB leds[NUM_LEDS];
@@ -20,7 +26,7 @@ void setup()
   delay(3000); // 3 second delay for recovery
   Serial.begin(9600);
   // tell FastLED about the LED strip configuration
-  FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
+  FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection(TypicalLEDStrip);
   // set master brightness control
   FastLED.setBrightness(BRIGHTNESS);
 }
@@ -69,7 +75,6 @@ void loop()
 void nextPattern()
 {
   // add one to the current pattern number, and wrap around at the end
-  
   if (RANDOM == "Random"){
     gCurrentPatternNumber = random(num_modes) % ARRAY_SIZE(gPatterns);
   }
