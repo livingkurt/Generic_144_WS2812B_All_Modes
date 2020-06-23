@@ -52,7 +52,7 @@
 #define NUM_X_9 12
 int ROW_9 = NUM_LEDS / NUM_X_9;
 
-void c_2_c_white()
+void c2c_white()
 {
   Serial.println("pattern_9");
   for (int i = 0; i < ROW_9; i++)

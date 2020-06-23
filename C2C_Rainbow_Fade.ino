@@ -6,7 +6,7 @@ int start_hue_8;
 int delta_hue_8 = 20;
 int ROW_8 = NUM_LEDS / NUM_X_8;
 
-void c_2_c_rainbow_fade()
+void c2c_rainbow_fade()
 {
   Serial.println("pattern_8");
   start_hue_8 = -1 * millis() / RATE_8;

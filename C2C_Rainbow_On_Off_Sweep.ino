@@ -10,7 +10,7 @@ int delta_hue_14 = 10;
 
 int ROW_14 = NUM_LEDS / NUM_X_14;
 
-void c_2_c_rainbow_on_off_sweep()
+void c2c_rainbow_on_off_sweep()
 {
   start_hue_14 = -1 * millis() / RATE_14;
   for (int i = 0; i < ROW_14; i++)
