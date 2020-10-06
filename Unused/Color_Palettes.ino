@@ -1,24 +1,11 @@
-
-// #define DataRate_Mhz 4     // how fast data refreshes at - [----CHECK THIS----] - slower rates are more successful when timing is not essential!!!!!
-
-// CRGBPalette16 currentPalette(PartyColors_p);
-uint8_t i;
-static uint8_t startPoint = 0;
-static uint8_t paletteQuantityLength = 128 / NUM_LEDS; //value between 0 and 10, how much of the lights should be lit up at once, 0 being all
-
-#define RATE_16 10
-
-int start_index;
-int index_interval = 5;
-
 // DEFINE_GRADIENT_PALETTE( my_p ) {
-//   0,     255,  50,  0, 
+//   0,     255,  50,  0,
 // 255,   0,0,255 };
 
-// Gradient palette "hsv_gp", originally from
-// http://soliton.vm.bytemark.co.uk/pub/cpt-city/h5/tn/hsv.png.index.html
-// converted for FastLED with gammas (2.6, 2.2, 2.5)
-// Size: 256 bytes of program space.
+// // Gradient palette "hsv_gp", originally from
+// // http://soliton.vm.bytemark.co.uk/pub/cpt-city/h5/tn/hsv.png.index.html
+// // converted for FastLED with gammas (2.6, 2.2, 2.5)
+// // Size: 256 bytes of program space.
 
 // DEFINE_GRADIENT_PALETTE( hsv_gp ) {
 //     0, 255,  0,  0,
@@ -86,43 +73,25 @@ int index_interval = 5;
 //   250, 255,  0,  3,
 //   255, 255,  0,  1};
 
-// Gradient palette "jet_gp", originally from
-// http://soliton.vm.bytemark.co.uk/pub/cpt-city/h5/tn/jet.png.index.html
-// converted for FastLED with gammas (2.6, 2.2, 2.5)
-// Size: 64 bytes of program space.
+// // Gradient palette "jet_gp", originally from
+// // http://soliton.vm.bytemark.co.uk/pub/cpt-city/h5/tn/jet.png.index.html
+// // converted for FastLED with gammas (2.6, 2.2, 2.5)
+// // Size: 64 bytes of program space.
 
-DEFINE_GRADIENT_PALETTE( jet_gp ) {
-    0,   0,  0,123,
-   17,   0,  0,255,
-   33,   0, 11,255,
-   51,   0, 55,255,
-   68,   0,135,255,
-   84,   0,255,255,
-  102,   6,255,255,
-  119,  41,255,123,
-  135, 120,255, 44,
-  153, 255,255,  7,
-  170, 255,255,  0,
-  186, 255,135,  0,
-  204, 255, 55,  0,
-  221, 255, 11,  0,
-  237, 255,  0,  0,
-  255, 120,  0,  0};
-
-
-CRGBPalette16 myPal = jet_gp;
-
-void color_palette() 
-{
-  Serial.println("pattern_1");
-  start_index = -1 * millis() / RATE_16;
-  for (int i = 0; i < NUM_LEDS; i++)
-
-  {
-    leds[i] = ColorFromPalette( myPal, start_index, 255, LINEARBLEND);
-    start_index += index_interval;
-  };
-  FastLED.show();
-  
-  
-}
+// DEFINE_GRADIENT_PALETTE(jet_gp){
+//     0, 0, 0, 123,
+//     17, 0, 0, 255,
+//     33, 0, 11, 255,
+//     51, 0, 55, 255,
+//     68, 0, 135, 255,
+//     84, 0, 255, 255,
+//     102, 6, 255, 255,
+//     119, 41, 255, 123,
+//     135, 120, 255, 44,
+//     153, 255, 255, 7,
+//     170, 255, 255, 0,
+//     186, 255, 135, 0,
+//     204, 255, 55, 0,
+//     221, 255, 11, 0,
+//     237, 255, 0, 0,
+//     255, 120, 0, 0};

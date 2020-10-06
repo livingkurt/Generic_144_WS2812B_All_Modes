@@ -2,13 +2,10 @@
 #define RATE_13 10
 #define NUM_X_13 12
 
-
-
 int start_hue_13;
 int delta_hue_13 = 10;
 
 int ROW_13 = NUM_LEDS / NUM_X_13;
-
 
 void c2c_rainbow_sweep()
 {

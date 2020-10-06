@@ -2,6 +2,6 @@
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328",
     "programmer": "AVRISP mkII",
-    "port": "/dev/tty.wchusbserial1460",
-    "sketch": "Separate_Files/Separate_Files.ino"
+    "port": "/dev/tty.wchusbserial144320",
+    "sketch": "Glow_String_Simple.ino"
 }
